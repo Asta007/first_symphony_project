@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="rel_title">
+        <h2 class="mt-4"> Employee </h2>
+    </div>
+    
+    <div class="addlink">
+        <a href="/add_employee" class="link_add"> Add Employee </a>
+    </div>
+    
+    <div class="table_side">
+        <table class="table table-striped table-bordered ">
+            <tr>
+            {# <tr class="bg-dark"> #}
+                <th> Id </th>
+                <th> Service </th>
+                <th> Nom </th>
+                <th> Prenom </th>
+                <th> Recruted_At </th>
+                <th> Action </th>
+            </tr>
+
+            {% for one_emp in all_emp %}
+                <tr>
+                    <td> {{ one_emp.id }} </td>
+                    {# <td> en attente </td> #}
+                    <td> {{ one_emp.ServiceId.label }} </td>
+                    <td> {{ one_emp.nom }} </td>
+                    <td> {{ one_emp.prenom }} </td>
+                    <td> {{ one_emp.RecrutedAt | date('d/m/y')}} </td>
+                    <td>
+                        <a class="btn btn-primary" href="/show_employee/{{ one_emp.id}}"> <img src="img/eye.png" width="15px" alt=""> </a>
+                        <a class="btn btn-danger" href="/show_employee/{{ one_emp.id}}/delete"> <img src="/img/trash.png" width="15px" alt=""> </a>
+                    </td>
+                    {# <td> blm</td> #}
+                </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

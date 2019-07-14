@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h2 class="mt-3"> Add a new employee </h2>
+<hr>
+
+<div class="col-sm-9 col-lg-6">
+        {{ form_start(form) }}
+
+            <div class="form-group">
+                {{ form_row(form.nom) }}
+            </div>
+        
+            <div class="form-group">
+                    {{ form_row(form.prenom) }}
+            </div>
+        
+            <div class="form-group">
+                    {{ form_label(form.ServiceId) }} <br>
+                    {{ form_widget(form.ServiceId,{'attr': {'class': 'form-control'}}) }}
+            </div>
+            
+            <div class="form-group">
+                    {{ form_label(form.RecrutedAt) }} <br>
+                    {{ form_widget(form.RecrutedAt, {'attr' : {'class' : 'form-control'}}) }}
+            </div>           
+        
+    
+        {# <div class="form-group">
+            <label for="Recuted At"></label>
+            <input type="Date" class=" form-control" name="">
+        </div> #}
+    
+        {# <input type="submit" class=" btn btn-success col-3 mt-3" value="Save"> #}
+    
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}
